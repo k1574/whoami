@@ -1,3 +1,6 @@
 <$MKINCDIR/config
 PROGNAME = whoami
 CFILES = main.c
+AFILES = $OBJDIR/9.a
+INCS = -I$INCDIR
+

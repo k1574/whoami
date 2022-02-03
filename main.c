@@ -1,6 +1,4 @@
-
-#include <stdlib.h>
-#include <stdio.h>
+#include <9/9.h>
 
 #include <pwd.h>
 
@@ -9,7 +7,7 @@ char *argv0;
 void
 usage(void)
 {
-	fprintf(stderr, "usage: %s [uid]\n", argv0);
+	fprint(2, "usage: %s [uid]\n", argv0);
 	exit(1);
 }
 
@@ -33,11 +31,11 @@ main(int argc, char *argv[])
 
 	pw = getpwuid(uid) ;
 	if(!pw){
-		fprintf(stderr, "%s: getpwuid: cannot find user for %d UID\n", argv0, uid);
+		fprint(2, "%s: getpwuid: cannot find user for %d UID\n", argv0, uid);
 		exit(1);
 	}
 
-	printf("%s", pw->pw_name);
+	print("%s", pw->pw_name);
 
 	return 0 ;
 }
